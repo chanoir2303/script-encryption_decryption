@@ -12,17 +12,14 @@ encrypt_msg = []
 decryption_list = []
 decrypt_msg = []
 
-start = input('type "enc" for encryption or "dec" for decryption: ')
 
-if start == 'enc':
-    x = input('type your message: ')
-    # encryption
+def encrypt():
     for i in x:
         encryption_list.append(n.index(alphabet.index(i)))
     print(encryption_list)
-elif start == 'dec':
-    y = input('input code one by one and type "ok" when you are done\n')
-    # decryption
+
+
+def decrypt():
     while y != 'ok':
         encrypt_msg.append(y)
         y = input()
@@ -31,5 +28,15 @@ elif start == 'dec':
     for o in decryption_list:
         decrypt_msg.append(alphabet[o])
     print(decrypt_msg)
+
+
+start = input('type "enc" for encryption or "dec" for decryption: ')
+
+if start == 'enc':
+    x = input('type your message: ')
+    encrypt(x)
+elif start == 'dec':
+    y = input('input code one by one and type "ok" when you are done\n')
+    decrypt(y)
 else:
     print('Error :(')
